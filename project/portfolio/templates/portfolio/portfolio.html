@@ -18,9 +18,12 @@
             </div>
             <div class="col-lg-7 col-md-8">
                 <h2 class="section-heading title">{{ p.title }}</h2>
-                <p>{{ p.description }}</p>
+                <p>{{ p.description|linebreaks }}</p>
                 {% if p.link %}
                     <p><a href="{{ p.link }}" target="_blank">Más información</a></p>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <p><a href="{% url 'admin:portfolio_project_change' p.id %}" target="_blank">Editar</a></p>
                 {% endif %}
             </div>
         </div>
