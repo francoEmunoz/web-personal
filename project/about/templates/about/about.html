@@ -18,7 +18,7 @@
             <div class="col-lg-7 col-md-8">
                 <h2 class="section-heading">Franco Muñoz</h2>
                 <p>{{ d.texto|linebreaks }}</p>
-                <p><a href="{{ d.link }}" target="_blank">Curriculum Vitae</a></p>
+                <p><a href="{% url 'descargar' %}">Curriculum Vitae</a></p>
                 {% if user.is_authenticated %}
                     <p><a href="{% url 'admin:about_description_change' d.id %}" target="_blank">Editar</a></p>
                 {% endif %}

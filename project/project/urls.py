@@ -17,13 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from core.views import home, contact
 from portfolio.views import portfolio
-from about.views import about
+from about.views import about, descargar_archivo
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name= 'home'),
     path('acerca-de/', about, name= 'about'),
+    path('acerca-de/descargar/', descargar_archivo, name = "descargar"),
     path('portafolio/', portfolio, name= 'portfolio'),
     path('contacto/', contact, name= 'contact')
 ]
